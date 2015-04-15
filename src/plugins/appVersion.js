@@ -13,6 +13,14 @@ angular.module('ngCordova.plugins.appVersion', [])
         });
 
         return q.promise;
+      },
+      getAppVersionCode: function () {
+        var q = $q.defer();
+        cordova.getAppVersion.getVersionCode(function (code) {
+          q.resolve(code);
+        });
+
+        return q.promise;
       }
     };
   }]);
